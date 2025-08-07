@@ -1,0 +1,5 @@
+# Execução de Prompts de Refinamento de Texto
+
+<figure><img src="https://github.com/user-attachments/assets/db001c9d-02e7-4365-aabd-d79ca3d95b3a" alt=""><figcaption></figcaption></figure>
+
+Os prompts de refinamento de texto funcionam de forma similar aos baseados em texto, usando um editor para que o usuário insira o texto a ser trabalhado. A **diferença principal** é que o resultado do prompt é comparado ao texto original. Essa comparação visualiza as **inclusões e exclusões**. Há também uma **visualização compacta** que mostra as "alterações" (substituições). Na visualização compacta, exclusões são mostradas em vermelho, inclusões em verde, e substituições em roxo. Ao passar o mouse sobre o texto em roxo, o usuário pode ver o que foi originalmente excluído. Além da diferença e diferença compacta, é possível visualizar o texto original e o texto refinado separadamente, permitindo copiar o resultado final diretamente. Esta funcionalidade está diretamente relacionada à ferramenta de Revisão de Texto.
