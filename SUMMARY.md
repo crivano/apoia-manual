@@ -27,6 +27,7 @@
 
 ## Outras Funcionalidades
 
+* [Chat](outras-funcionalidades/chat.md)
 * [Síntese de Processos](outras-funcionalidades/sintese-de-processos.md)
 * [Revisão de Texto](outras-funcionalidades/revisao-de-texto.md)
 
