@@ -2,11 +2,15 @@
 
 A plataforma ApoIA disponibiliza uma poderosa funcionalidade de **chat com inteligência artificial**, projetada para auxiliar magistrados, assessores e servidores em tarefas de análise e triagem processual. Essa funcionalidade combina recursos avançados de linguagem com acesso direto a dados processuais, permitindo interações precisas, seguras e produtivas.
 
+<figure><img src="../.gitbook/assets/apoia.pdpj.jus.br_chat(Desktop 1260x800) (1).png" alt=""><figcaption></figcaption></figure>
+
 O chat tem como objetivo oferecer **respostas fundamentadas exclusivamente com base no conteúdo processual e nos dados disponíveis**, respeitando rigorosamente os limites da informação acessada. Ele está instruído para não inventar, presumir ou deduz fatos fora do que está documentado nas peças ou nos metadados de processo, no entanto, tudo que é produzido pela IA deve ser cuidadosamente validado.
 
 Para utilizar, basta iniciar a conversa no chat e informar o número do processo ou perguntas diretas sobre os elementos processuais. A IA conduzirá a análise de forma autônoma, utilizando as ferramentas quando necessário, sem exigir comandos específicos do usuário.
 
 Você também pode utilizar os **botões de sugestão abaixo da caixa de texto** para facilitar o início da interação.
+
+{% embed url="https://youtu.be/8IDmQcYfiq0" %}
 
 ## Ferramentas Integradas
 
