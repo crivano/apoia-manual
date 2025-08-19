@@ -90,9 +90,11 @@ Enquanto essas duas questões não são resolvidas, a Apoia fica restrita aos pr
 
 Caso esteja usando uma chave privada e tente acessar os modelos gpt-5 e gpt-5-mini, é possível que receba o seguinte erro:
 
+{% hint style="info" %}
 Erro na comunicação com o provedor de inteligência artificial: AI\_APICallError: Your organization must be verified to stream this model. Please go to: https://platform.openai.com/settings/organization/general and click on Verify Organization. If you just verified, it can take up to 15 minutes for access to propagate.
+{% endhint %}
 
-Isso não é um problema da Apoia, mas sim uma exigência da OpenAI. Para acessar os modelos mais novos é necessário fazer a verificação. Isso incluí o envio de foto de documento de identidade e também do reconhecimento facial. Vá para https://platform.openai.com/settings/organization/general e clique em "Verify Organization" para inicial o processo de verificação.
+Isso não é um problema da Apoia, mas sim uma exigência da OpenAI. Para acessar os modelos mais novos é necessário fazer a verificação. Isso incluí o envio de foto de documento de identidade e também do reconhecimento facial. Vá para [https://platform.openai.com/settings/organization/general](https://platform.openai.com/settings/organization/general) e clique em "Verify Organization" para inicial o processo de verificação.
 
 #### Erro ao acessar a Apoia
 
