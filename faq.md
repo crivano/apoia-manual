@@ -48,9 +48,31 @@ Utilize o módulo **Síntese Processual**, informe o número do processo e a Apo
 
 Anote o código e o contexto do erro e entre em contato com o suporte técnico em: [https://suporteti.cnj.jus.br](https://suporteti.cnj.jus.br/)
 
+#### Erro acessando processo
+
+Recebi um erro do tipo:
+
+{% hint style="info" %}
+Error: Não foi possível acessar o processo \[número do processo] no DataLake/Codex da PDPJ (Error: Erro ao realizar consulta. Exception: br.jus.cnj.datalake.exception.ConsultaProcessoException - Erro ao realizar consulta. Exception: br.jus.cnj.datalake.exception.RegistroNaoEncontradoException - Não foram encontrados registros. Origem: br.jus.cnj.datalake.repository.impl.ProcessoRepositoryImpl.buscarProcessoPorPath)
+{% endhint %}
+
+Isso é um erro bem comum, mas não é um erro da Apoia.
+
+A Apoia utiliza o Datalake para obter informações sobre os processos e também o conteúdo das peças processuais.
+
+Esse erro acontece quando a Apoia solicita os metadados de um processo e o datalake responde com um erro.
+
+Este erro pode ser causado por um problema na fila de processamento do Datalake ou na integração entre o tribunal em questão e o Datalake.  Se o processo for sigiloso, este erro pode estar relacionado à [omissão de processos sigilosos](faq.md#nao-e-possivel-acessar-processos-e-pecas-sigilosos).
+
+Sugimos entrar em contato com a equipe que cuida do datalake para resolver esse problema.
+
 #### Erro recuperando peça processual
 
-Recebi um erro do tipo: Error: Não foi possível obter o texto da peça no DataLake/Codex da PDPJ. (Error: Erro interno na API do Codex. - número do processo/identificador da peça)
+Recebi um erro do tipo:
+
+{% hint style="info" %}
+Error: Não foi possível obter o texto da peça no DataLake/Codex da PDPJ. (Error: Erro interno na API do Codex. - número do processo/identificador da peça)
+{% endhint %}
 
 Isso é um erro bem comum, mas não é um erro da Apoia.
 
