@@ -9,3 +9,7 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 1.2 - Banco de Prompts
 
 1.3 - Controle de limites de uso de chaves de API e dashboard
+
+1.4 - Chat Agêntico
+
+1.5 - Unificação de Banco de Prompts e Síntese Processual
