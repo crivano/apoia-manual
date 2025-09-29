@@ -36,3 +36,4 @@
 ***
 
 * [Geração de Ementa](geracao-de-ementa.md)
+* [Relatório de Acervo](relatorio-de-acervo.md)
