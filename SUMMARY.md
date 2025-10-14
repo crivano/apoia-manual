@@ -30,7 +30,6 @@
 ## Outras Funcionalidades
 
 * [Chat](outras-funcionalidades/chat.md)
-* [Síntese de Processos](outras-funcionalidades/sintese-de-processos.md)
 * [Revisão de Texto](outras-funcionalidades/revisao-de-texto.md)
 * [Geração de Ementa](outras-funcionalidades/geracao-de-ementa.md)
 * [Relatório de Acervo](outras-funcionalidades/relatorio-de-acervo.md)
