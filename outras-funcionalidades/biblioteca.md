@@ -1,6 +1,8 @@
-# Biblioteca de Documentos
+---
+description: Personalizando o Apoia com Documentos
+---
 
-#### Personalizando o Apoia com Documentos
+# Biblioteca
 
 A funcionalidade "Biblioteca" da Apoia é um recurso poderoso que permite ao usuário cadastrar diversos documentos para personalizar e otimizar a geração de textos, como minutas, decisões e despachos. Com a Biblioteca, é possível incluir informações específicas, como estilos de escrita, entendimentos jurídicos e jurisprudências, que serão automaticamente consideradas pela Apoia ao processar seus prompts.
 
