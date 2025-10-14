@@ -32,5 +32,5 @@
 * [Chat](outras-funcionalidades/chat.md)
 * [Revisão de Texto](outras-funcionalidades/revisao-de-texto.md)
 * [Geração de Ementa](outras-funcionalidades/geracao-de-ementa.md)
-* [Biblioteca de Documentos](outras-funcionalidades/biblioteca-de-documentos.md)
+* [Biblioteca](outras-funcionalidades/biblioteca.md)
 * [Relatório de Acervo](outras-funcionalidades/relatorio-de-acervo.md)
