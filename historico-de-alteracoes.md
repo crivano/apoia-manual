@@ -13,3 +13,7 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 1.4 - Chat Agêntico
 
 1.5 - Unificação de Banco de Prompts e Síntese Processual
+
+1.6 - Biblioteca do Usuário
+
+1.7 - Integração com Eproc via InteliAgent
