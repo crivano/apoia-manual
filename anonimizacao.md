@@ -6,6 +6,10 @@ Essa funcionalidade não utiliza recursos de IA, apenas trata os textos através
 
 A anonimização pode ser ativada ou desativada diretamente pelo usuário, por meio de uma **opção disponível no menu de configurações do usuário**, na interface da aplicação. A ativação é feita por meio de uma **caixa de seleção** (checkbox) identificada como "Anonimizar".
 
+{% hint style="info" %}
+Não é realizada anonimização em arquivos enviados como anexos no Chat.
+{% endhint %}
+
 ## Informações anonimizadas
 
 Quando a anonimização está ativa, o sistema aplica transformações automáticas no conteúdo textual das peças processuais e dos metadados, cobrindo os seguintes tipos de dados:
