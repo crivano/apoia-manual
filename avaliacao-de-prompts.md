@@ -4,6 +4,8 @@ Para garantir a qualidade e a relevância dos prompts disponíveis no "Banco de 
 
 Estes sistemas ajudam os usuários a identificar os prompts mais úteis e auxiliam na moderação automática do conteúdo público, garantindo que os prompts de baixa qualidade sejam removidos da listagem principal.
 
+{% embed url="https://youtu.be/p1z-fRIXdxw" %}
+
 **1. Favoritos**
 
 Os usuários podem marcar um prompt como "favorito". A listagem do "Banco de Prompts" possui ícones que indicam se o prompt foi criado pelo próprio usuário (ícone de pessoa) ou por outros (ícone de coração).
