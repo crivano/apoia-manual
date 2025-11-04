@@ -26,6 +26,7 @@
 * [Execução de Prompts de Refinamento de Texto](execucao-de-prompts-de-refinamento-de-texto.md)
 * [Criar Novo Prompt](criar-novo-prompt.md)
 * [Criar Prompt a Partir de um Modelo](criar-prompt-a-partir-de-um-modelo.md)
+* [Avaliação de Prompts](avaliacao-de-prompts.md)
 
 ## Outras Funcionalidades
 
