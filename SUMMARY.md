@@ -33,5 +33,6 @@
 * [Chat](outras-funcionalidades/chat.md)
 * [Revisão de Texto](outras-funcionalidades/revisao-de-texto.md)
 * [Geração de Ementa](outras-funcionalidades/geracao-de-ementa.md)
+* [Degravação](outras-funcionalidades/degravacao.md)
 * [Biblioteca](outras-funcionalidades/biblioteca.md)
 * [Relatório de Acervo](outras-funcionalidades/relatorio-de-acervo.md)
