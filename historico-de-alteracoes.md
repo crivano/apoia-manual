@@ -17,3 +17,5 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 1.6 - Biblioteca do Usuário
 
 1.7 - Integração com Eproc via InteliAgent
+
+1.8 - Degravação
