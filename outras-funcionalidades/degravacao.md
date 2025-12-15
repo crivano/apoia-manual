@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Degravação
 
 A Apoia possui uma ferramenta avançada para a degravação de arquivos de áudio e vídeo, acessível pelo menu principal. Essa funcionalidade utiliza Inteligência Artificial para converter falas em texto e, além disso, gerar análises estruturadas do conteúdo. O objetivo é transformar gravações longas, como audiências e sessões, em documentos textuais organizados, resumidos e fáceis de consultar.
