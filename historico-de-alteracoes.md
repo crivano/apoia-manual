@@ -19,3 +19,5 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 1.7 - Integração com Eproc via InteliAgent
 
 1.8 - Degravação
+
+1.9 - Hub da Comunidade
