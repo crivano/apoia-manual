@@ -21,3 +21,5 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 1.8 - Degravação
 
 1.9 - Hub da Comunidade
+
+1.10 - Integração direta com Eproc e acesso a peças com nível de sigilo 1
