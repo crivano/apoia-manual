@@ -12,6 +12,10 @@ Para executar um prompt deste tipo, é necessário primeiro informar o **número
 
 {% embed url="https://youtu.be/leqEFLtJY_o" %}
 
+A seleção de peças também pode ser realizada a partir de uma visualização em forma de Árvore, na qual as peças aparecem vinculadas as eventos e clicando no tipo da peça é automaticamente carregada a visualização.
+
+{% embed url="https://youtu.be/55BkwJfW9HI" %}
+
 As peças selecionadas são obtidas do DataLake/Codex, que já possui os textos devidamente extraídos (OCR). Se o usuário cadastrou uma chave de API e modelo de IA, este modelo é acionado para produzir o resultado. Caso contrário, o conteúdo do prompt e das peças é copiado para a área de transferência.
 
 Uma vez que o prompt foi executado e o resultado gerado, é possível conversar com o processo utilizando a opção de chat. A inteligência artificial já "leu" as peças selecionadas. Pode-se fazer perguntas (ex: "quais os pedidos da inicial?") e ter uma conversa completa, funcionando como um Chat GPT.
