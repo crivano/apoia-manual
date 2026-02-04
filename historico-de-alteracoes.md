@@ -25,3 +25,5 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 1.10 - Integração direta com Eproc e acesso a peças com nível de sigilo 1 (para uso interno do TRF2)
 
 1.11 - Links clicáveis para as peças processuais citadas nos resultados dos prompts
+
+1.12 - Identificação de citações no texto produzido pela IA
