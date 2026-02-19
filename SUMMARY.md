@@ -36,3 +36,4 @@
 * [Degravação](outras-funcionalidades/degravacao.md)
 * [Biblioteca](outras-funcionalidades/biblioteca.md)
 * [Relatório de Acervo](outras-funcionalidades/relatorio-de-acervo.md)
+* [Busca Semântica de Temas](outras-funcionalidades/busca-semantica-de-temas.md)
