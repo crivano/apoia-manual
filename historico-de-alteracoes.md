@@ -27,3 +27,5 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 1.11 - Links clicáveis para as peças processuais citadas nos resultados dos prompts
 
 1.12 - Identificação de citações no texto produzido pela IA
+
+1.13 - Busca semântica de temas dos tribunais superiores
