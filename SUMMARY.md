@@ -37,3 +37,7 @@
 * [Biblioteca](outras-funcionalidades/biblioteca.md)
 * [Relatório de Acervo](outras-funcionalidades/relatorio-de-acervo.md)
 * [Busca Semântica de Temas](outras-funcionalidades/busca-semantica-de-temas.md)
+
+## Repositório de Prompts
+
+* [Como Escrever Arquivos de Prompt](repositorio-de-prompts/como-escrever-arquivos-de-prompt.md)
