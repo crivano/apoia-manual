@@ -18,7 +18,7 @@ Além de fornecer uma ou mais chaves de API, o tribunal também pode:
 
 Para realizar a integração, o tribunal deve seguir as instruções abaixo.
 
-### Identifique o Código do Tribunal
+### Identifique os Códigos do Tribunal
 
 Para identificar o tribunal, o primeiro passo é que algum usuário do tribunal em questão faça o login na Apoia utilizando as credenciais de login corporativo do CNJ (CPF e senha).
 
@@ -28,7 +28,7 @@ Depois de autenticado, o usuário deve apontar o navegador para:&#x20;
 https://apoia.pdpj.jus.br/api/env/court
 ```
 
-Será então apresentado um número. Este número é o código do tribunal.
+Será então apresentados dois números: o seq\_tribunal\_pai e o seq\_orgão. Estes números são os códigos do tribunal.
 
 Se em vez de um número for apresentada uma mensagem de erro dizendo "Código do tribunal não encontrado", por favor, [abra uma chamado](https://trf2.gitbook.io/apoia/faq#o-sistema-apresenta-erro-codigo-de-erro-.-como-resolver) para o suporte relatando o problema.
 
@@ -48,7 +48,7 @@ Como explicado anteriormente, a Apoia pode limitar o gasto diário de cada usuá
 
 Crie um email com todos os dados que foram obtidos nas etapas anteriores:
 
-* Código do tribunal;
+* Códigos do tribunal (seq\_tribunal\_pai e seq\_orgao);
 * Para cada provedor: nome do provedor, chave de API, modelos a serem disponibilizados
 * Limite diário por usuário e geral
 
