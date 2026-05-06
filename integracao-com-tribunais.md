@@ -53,7 +53,7 @@ Como explicado anteriormente, a Apoia pode limitar o gasto diário de cada usuá
 Crie um email com todos os dados que foram obtidos nas etapas anteriores:
 
 * Códigos do tribunal (seq\_tribunal\_pai e seq\_orgao);
-* Identificação por email: indique quais terminações serão aceitas (opcional)
+* Identificação por email: opcionalmente, indique quais terminações de email serão aceitas
 * Para cada provedor: nome do provedor, chave de API, modelos a serem disponibilizados
 * Limite diário por usuário e geral
 
