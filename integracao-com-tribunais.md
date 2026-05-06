@@ -32,6 +32,10 @@ Será então apresentados dois números: o seq\_tribunal\_pai e o seq\_orgão. E
 
 Se em vez de um número for apresentada uma mensagem de erro dizendo "Código do tribunal não encontrado", por favor, [abra uma chamado](https://trf2.gitbook.io/apoia/faq#o-sistema-apresenta-erro-codigo-de-erro-.-como-resolver) para o suporte relatando o problema.
 
+### Avalie a Identificação por Email
+
+Em alguns casos, pode ser interessante solicitar que todos os email com determinada terminação devam ser redirecionados para seu órgão. Essa é uma estratégia interessante para garantir que mesmo os servidores requisitados tem acesso à chave de API.
+
 ### Selecione Provedores de IA e Modelos
 
 Escolha entre os provedores acima quais que deseja disponibilizar para seus usuários.
@@ -49,6 +53,7 @@ Como explicado anteriormente, a Apoia pode limitar o gasto diário de cada usuá
 Crie um email com todos os dados que foram obtidos nas etapas anteriores:
 
 * Códigos do tribunal (seq\_tribunal\_pai e seq\_orgao);
+* Identificação por email: indique quais terminações serão aceitas (opcional)
 * Para cada provedor: nome do provedor, chave de API, modelos a serem disponibilizados
 * Limite diário por usuário e geral
 
