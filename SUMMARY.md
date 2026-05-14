@@ -6,6 +6,7 @@
 * [Entrando na Apoia](entrando-na-apoia.md)
 * [Chave de API e Modelo de IA](chave-de-api-e-modelo-de-ia.md)
 * [Integração com Tribunais](integracao-com-tribunais.md)
+* [Segurança da Informação](seguranca-da-informacao.md)
 * [Anonimização](anonimizacao.md)
 * [Links Úteis e Informação para Contato](links-uteis-e-informacao-para-contato.md)
 * [Histórico de Alterações](historico-de-alteracoes.md)
