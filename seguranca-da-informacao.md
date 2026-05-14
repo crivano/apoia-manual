@@ -36,7 +36,7 @@ Nossos fluxos de trabalho (_workflows_) de geração de sentença e voto são ri
 2. A Apoia exige que o usuário (magistrado ou servidor) fundamente a decisão e indique explicitamente se o pedido é procedente ou improcedente.
 3. Somente após essa diretriz humana, a IA redige a minuta.
 
-### Nossas Salvaguardas (_System Prompt_)
+### Nossas Salvaguardas
 
 As diretrizes centrais que governam o comportamento do motor de Inteligência Artificial da Apoia estão codificadas em seu _System Prompt_ imutável, garantindo a conformidade com as normas do CNJ e a segurança da aplicação:
 
