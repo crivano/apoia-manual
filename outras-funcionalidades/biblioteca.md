@@ -20,11 +20,12 @@ Para criar um novo documento, basta acessar a seção "Biblioteca", clicar em "N
 
 **Tipos de Inclusão**
 
-Existem três tipos de inclusão que você pode configurar para cada documento da sua Biblioteca:
+Existem quatro tipos de inclusão que você pode configurar para cada documento da sua Biblioteca:
 
 * Sempre: O documento será incluído em todos os prompts, independentemente do contexto. É ideal para instruções gerais de estilo e formatação que você deseja aplicar a todos os seus textos.
 * Contextual: O documento será incluído apenas quando o prompt estiver relacionado a um contexto específico que você definir. Por exemplo, você pode criar um documento com entendimentos sobre "aposentadoria" e configurar a inclusão para ocorrer apenas em processos que tratem desse tema. Para isso, basta descrever o contexto no campo que aparecerá ao selecionar esta opção.
 * Nunca: O documento não será incluído automaticamente em nenhum prompt. Esta opção é útil para armazenar modelos de texto ou informações que você deseja consultar e incluir manualmente quando necessário.
+* Pelo nome do prompt: Se o nome do documento da biblioteca for exatamente igual ao nome do prompt, a inclusão será automática.
 
 **Integração com o Banco de Prompts e Chat**
 
