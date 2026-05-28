@@ -43,6 +43,7 @@ sort: 3
 share: publico
 target: processo
 piece_strategy: mais-relevantes-segunda-instancia
+profile: eficiente
 instance: [segundo-grau]
 matter: [civel]
 scope: [justica-federal]
@@ -151,6 +152,27 @@ Define qual estratégia de seleção de peças do processo será usada. Relevant
 ```yaml
 piece_strategy: mais-relevantes-segunda-instancia
 ```
+
+#### `profile`_(opcional)_
+
+Define o perfil de modelo a ser usado por este prompt. O front matter aceita apenas os perfis abstratos abaixo, nunca nomes concretos de modelos como `gemini-2.5-pro` ou `gpt-4.1`. Use o perfil `premium` só em último caso, pois normalmente é muito mais caro que os demais. Utilize o perfil `eficiente` quando não há necessidade de raciocínio profundo, mas prezar pela velocidade e baixo custo. O perfil `versatil` representa modelos com boa capacidade de raciocínio e custo razoável.
+
+Perfis aceitos:
+
+| Valor               | Descrição                                |
+| ------------------- | ---------------------------------------- |
+| `premium`           | Perfil de maior capacidade geral         |
+| `premium-mp3`       | Perfil premium com suporte a MP3         |
+| `premium-pdf`       | Perfil premium com suporte a PDF         |
+| `premium-mp3-pdf`   | Perfil premium com suporte a MP3 e PDF   |
+| `versatil`          | Perfil intermediário de uso geral        |
+| `versatil-mp3`      | Perfil versátil com suporte a MP3        |
+| `versatil-pdf`      | Perfil versátil com suporte a PDF        |
+| `versatil-mp3-pdf`  | Perfil versátil com suporte a MP3 e PDF  |
+| `eficiente`         | Perfil mais econômico/eficiente          |
+| `eficiente-mp3`     | Perfil eficiente com suporte a MP3       |
+| `eficiente-pdf`     | Perfil eficiente com suporte a PDF       |
+| `eficiente-mp3-pdf` | Perfil eficiente com suporte a MP3 e PDF |
 
 #### `instance` _(opcional)_
 
