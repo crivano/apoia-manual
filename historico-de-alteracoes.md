@@ -29,3 +29,7 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 1.12 - Identificação de citações no texto produzido pela IA
 
 1.13 - Busca semântica de temas dos tribunais superiores
+
+2.0 - Sincronismos com repositórios de prompt externos
+
+2.1 - Definição de perfil do modelo de IA que deve ser utilizado no prompt
