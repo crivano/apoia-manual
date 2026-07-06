@@ -35,3 +35,5 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 2.1 - Definição de perfil do modelo de IA que deve ser utilizado no prompt
 
 2.2 - Sugestão de prompts com base na fase em que o processo se encontra
+
+2.3 - Armazenamento de chaves de API encriptadas no banco
