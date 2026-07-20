@@ -37,3 +37,7 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 2.2 - Sugestão de prompts com base na fase em que o processo se encontra
 
 2.3 - Armazenamento de chaves de API encriptadas no banco
+
+2.4 - Servidor MCP
+
+2.5 - Manuais gerados por IA na biblioteca
