@@ -33,6 +33,7 @@
 
 * [Biblioteca](biblioteca/biblioteca.md)
 * [Criar Manual com IA](biblioteca/criar-manual-com-ia.md)
+* [Compartilhar Documento](biblioteca/compartilhar-documento.md)
 
 ## Outras Funcionalidades
 
