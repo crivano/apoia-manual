@@ -29,13 +29,17 @@
 * [Criar Prompt a Partir de um Modelo](criar-prompt-a-partir-de-um-modelo.md)
 * [Avaliação de Prompts](avaliacao-de-prompts.md)
 
+## Biblioteca
+
+* [Biblioteca](biblioteca/biblioteca.md)
+* [Criar Manual com IA](biblioteca/criar-manual-com-ia.md)
+
 ## Outras Funcionalidades
 
 * [Chat](outras-funcionalidades/chat.md)
 * [Revisão de Texto](outras-funcionalidades/revisao-de-texto.md)
 * [Geração de Ementa](outras-funcionalidades/geracao-de-ementa.md)
 * [Degravação](outras-funcionalidades/degravacao.md)
-* [Biblioteca](outras-funcionalidades/biblioteca.md)
 * [Relatório de Acervo](outras-funcionalidades/relatorio-de-acervo.md)
 * [Busca Semântica de Temas](outras-funcionalidades/busca-semantica-de-temas.md)
 * [Servidor MCP](outras-funcionalidades/servidor-mcp.md)

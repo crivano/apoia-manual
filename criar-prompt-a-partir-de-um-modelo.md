@@ -8,8 +8,7 @@ Um modelo é uma variação da criação de prompts. Essencialmente, o modelo fu
 
 Se o modelo for bem estruturado e já fornecer um tipo específico de explicação, indicando, por exemplo, que a decisão é improcedente, essa estrutura e resultado podem ser automatizados pela APOIA.
 
-Para criar um modelo, você deve:\
-
+Para criar um modelo, você deve:<br>
 
 1. Copiar e colar seu modelo (como uma sentença, decisão, etc.) no campo designado para o modelo.
 2. Certifique-se de que o modelo já inclua a definição do resultado (procedência/improcedência).
