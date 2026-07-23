@@ -13,6 +13,7 @@
 * [Glossário](glossario.md)
 * [Legislação Aplicável ao Uso da IA no Poder Judiciário](legislacao-aplicavel-ao-uso-da-ia-no-poder-judiciario.md)
 * [Histórico](historico.md)
+* [Acessibilidade](acessibilidade.md)
 * [FAQ](faq.md)
 
 ## Banco de Prompts
