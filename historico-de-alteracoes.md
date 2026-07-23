@@ -41,3 +41,7 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 2.4 - Servidor MCP
 
 2.5 - Manuais gerados por IA na biblioteca
+
+2.6 - Sistema interno de chamados
+
+2.7 - Melhorias de acessibilidade
