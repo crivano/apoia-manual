@@ -45,3 +45,5 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 2.6 - Sistema interno de chamados
 
 2.7 - Melhorias de acessibilidade
+
+2.8 - Prompts opcionais
