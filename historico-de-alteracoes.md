@@ -47,3 +47,7 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 2.7 - Melhorias de acessibilidade
 
 2.8 - Prompts opcionais
+
+3.0 - Integração com o SEI (requer módulo de comunicação)
+
+3.1 - Documentos públicos na biblioteca
