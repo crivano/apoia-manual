@@ -76,6 +76,10 @@ Veja no vídeo abaixo como realizar a configuração do tribunal.
 
 {% embed url="https://youtu.be/Dn9HJe-ULU8" %}
 
+{% hint style="info" %}
+**Atenção**: a alteração da configuração pode demorar 1 minuto ou mais para ser aplicada à Apoia. Por motivo de desempenho, a aplicação armazena esses dados em cache.
+{% endhint %}
+
 #### Contexto e Requisito de Acesso
 
 O formulário de Configuração do Tribunal no sistema Apoia é a interface central onde o gestor regional administra os recursos de Inteligência Artificial Generativa para a sua jurisdição. O acesso a este painel é restrito a usuários previamente autorizados pelo TRF2, exigindo o cadastro do e-mail do gestor. Uma vez concedida a permissão, o painel fica disponível no menu de opções do usuário. A gestão centralizada garante governança orçamentária, segurança de chaves, interoperabilidade com sistemas processuais e controle de modelos.
