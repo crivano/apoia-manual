@@ -51,3 +51,5 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 3.0 - Integração com o SEI (requer módulo de comunicação)
 
 3.1 - Documentos públicos na biblioteca
+
+3.2 - Gestor do tribunal pode configurar chave de API, modelos e limites
