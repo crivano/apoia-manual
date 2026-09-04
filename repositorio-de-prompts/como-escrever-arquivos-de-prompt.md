@@ -135,19 +135,20 @@ target: processo
 
 Define qual estratégia de seleção de peças do processo será usada. Relevante apenas quando `target: processo`.
 
-| Valor                                | Descrição                                           |
-| ------------------------------------ | --------------------------------------------------- |
-| `mais-relevantes`                    | Peças mais relevantes (estratégia geral)            |
-| `mais-relevantes-primeira-instancia` | Peças mais relevantes de processos de primeiro grau |
-| `mais-relevantes-segunda-instancia`  | Peças mais relevantes de processos de segundo grau  |
-| `apelacao-e-triagem`                 | Focada em apelações e triagem                       |
-| `viabilidade-recurso-extraordinario` | Voltada para análise de viabilidade de RE           |
-| `viabilidade-recurso-especial`       | Voltada para análise de viabilidade de REsp         |
-| `peticao-inicial`                    | Foca na petição inicial                             |
-| `peticao-inicial-e-anexos`           | Petição inicial e seus anexos                       |
-| `conhecimento`                       | Fase de conhecimento                                |
-| `tipos-especificos`                  | Seleciona tipos de peça especificados separadamente |
-| `todas`                              | Inclui todas as peças disponíveis                   |
+| Valor                                | Descrição                                                                                        |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `mais-relevantes`                    | Peças mais relevantes (estratégia geral)                                                         |
+| `mais-relevantes-primeira-instancia` | Peças mais relevantes de processos de primeiro grau                                              |
+| `mais-relevantes-segunda-instancia`  | Peças mais relevantes de processos de segundo grau                                               |
+| `apelacao-e-triagem`                 | Focada em apelações e triagem                                                                    |
+| `viabilidade-recurso-extraordinario` | Voltada para análise de viabilidade de RE                                                        |
+| `viabilidade-recurso-especial`       | Voltada para análise de viabilidade de REsp                                                      |
+| `peticao-inicial`                    | Foca na petição inicial                                                                          |
+| `peticao-inicial-e-anexos`           | Petição inicial e seus anexos                                                                    |
+| `conhecimento`                       | Fase de conhecimento                                                                             |
+| `tipos-especificos`                  | Seleciona tipos de peça especificados separadamente                                              |
+| `todas`                              | Inclui todas as peças disponíveis                                                                |
+| `selecionadas-pela-ia`               | Nenhuma peça pré-selecionada: a IA escolhe e obtém os textos do processo por meio de ferramentas |
 
 ```yaml
 piece_strategy: mais-relevantes-segunda-instancia
