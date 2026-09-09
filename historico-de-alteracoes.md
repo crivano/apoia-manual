@@ -53,3 +53,7 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 3.1 - Documentos públicos na biblioteca
 
 3.2 - Gestor do tribunal pode configurar chave de API, modelos e limites
+
+3.3 - Busca de jurisprudência compatível com Eproc (em teste no TRF2)
+
+3.4 - Preprocessamento de peças (CNIS sendo processado por Fábrica de Cálculos)
