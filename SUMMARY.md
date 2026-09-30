@@ -49,3 +49,9 @@
 ## Repositório de Prompts
 
 * [Como Escrever Arquivos de Prompt](repositorio-de-prompts/como-escrever-arquivos-de-prompt.md)
+
+## Termos de Uso
+
+***
+
+* [Termos de Uso - 30/09/2026](termos-de-uso-30-09-2026.md)
