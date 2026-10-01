@@ -57,3 +57,9 @@ Listamos abaixo as principais características de cada versão, mais detalhes po
 3.3 - Busca de jurisprudência compatível com Eproc (em teste no TRF2)
 
 3.4 - Preprocessamento de peças (CNIS sendo processado por Fábrica de Cálculos)
+
+3.5 - Reclassificação de peças processuais direto pela lista de peças
+
+3.6 - Cópia de conteúdos anteriores e resultados de ferramentas
+
+3.7 - Configuração de power-users por tribunal
