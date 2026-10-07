@@ -18,7 +18,7 @@ Ao criar um novo item na Biblioteca com o tipo Manual, o usuário pode escolher 
 * Sentença
 * Voto
 
-> 💡 Configuração de Inclusão Automática: Da mesma forma que os documentos normais da biblioteca, é possível definir a regra de inserção automática do manual nos prompts: Nunca, Sempre ou Contextual.
+> 💡 Configuração de Inclusão Automática: Da mesma forma que os documentos normais da biblioteca, é possível definir a regra de inserção automática do manual nos prompts: Nunca, Sempre ou Contextual. Para que um manual sirva a um prompt específico, lembre-se de que o casamento pelo nome do prompt também vale para manuais.
 
 ### Passo a Passo para Criar um Manual com IA
 
@@ -32,18 +32,18 @@ Ao criar um novo item na Biblioteca com o tipo Manual, o usuário pode escolher 
 
 Em vez de digitar as diretrizes manualmente, o usuário fornece números de processos que servirão de modelo:
 
-1. Clique no botão Acrescentar Exemplos (ou _Incluir Exemplos_).
-2. Cole um ou mais números de processos no campo indicado.
+1. Clique no botão **Acrescentar Exemplos** (disponível após o primeiro salvamento; em itens novos, use "Incluir Exemplos/Anexos").
+2. Cole um ou mais números de processos no campo indicado, separados por vírgula. Itens já existentes são ignorados.
 3. Clique em Confirmar.
 
 #### 3. Ajuste Automático e Seleção de Peças
 
 * A Apoia analisa os processos informados e identifica automaticamente a peça correspondente ao tipo de manual selecionado (por exemplo, os primeiros despachos localizados nos processos).
-* Ajuste Manual: Se necessário, é possível clicar em Selecionar peça ao lado de cada processo para alterar o documento/evento específico a ser utilizado como exemplo.
+* Ajuste Manual: Se necessário, é possível clicar em **Selecionar peça** ao lado de cada processo para alterar o documento/evento específico a ser utilizado como exemplo. Cada exemplo também pode ser **Excluído**.
 
 #### 4. Geração do Manual pela Inteligência Artificial
 
 1. Com a lista de processos/peças configurada, clique no botão `Gerar Manual com IA`.
-2. A Apoia analisará o conteúdo e o padrão de todas as peças indicadas e comporá o texto do manual no editor, separando seções obrigatórias e opcionais (como relatório inicial, enquadramento jurídico e providências finais).
-3. O usuário pode fazer edições diretas no texto gerado, se desejar.
+2. Aguarde: a Apoia analisará o conteúdo e o padrão de todas as peças indicadas e comporá o texto do manual, transferindo-o automaticamente para o formulário, com seções obrigatórias e opcionais (como relatório inicial, enquadramento jurídico e providências finais).
+3. O usuário pode fazer edições diretas no texto gerado, se desejar. Manuais aceitam as mesmas marcações condicionais dos prompts de modelo (`{}`, `{{}}`, `{{{}}}`), e o formulário avisa se houver marcação não fechada.
 4. Clique em Salvar para disponibilizar o manual na Biblioteca.

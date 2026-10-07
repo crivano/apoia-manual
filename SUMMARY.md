@@ -19,11 +19,10 @@
 ## Banco de Prompts
 
 * [Banco de Prompts](banco-de-prompts/banco-de-prompts.md)
-
-***
-
 * [Listagem de Prompts](listagem-de-prompts.md)
 * [Execução de Prompts Baseados em Peças Processuais](execucao-de-prompts-baseados-em-pecas-processuais.md)
+* [Workflows de Prompts](banco-de-prompts/workflows-de-prompts.md)
+* [Reclassificação de Peças Processuais](banco-de-prompts/reclassificacao-de-pecas.md)
 * [Execução de Prompts Baseados em Texto](execucao-de-prompts-baseados-em-texto.md)
 * [Execução de Prompts de Refinamento de Texto](execucao-de-prompts-de-refinamento-de-texto.md)
 * [Criar Novo Prompt](criar-novo-prompt.md)
@@ -40,11 +39,22 @@
 
 * [Chat](outras-funcionalidades/chat.md)
 * [Revisão de Texto](outras-funcionalidades/revisao-de-texto.md)
+* [Linguagem Simples](outras-funcionalidades/linguagem-simples.md)
 * [Geração de Ementa](outras-funcionalidades/geracao-de-ementa.md)
 * [Degravação](outras-funcionalidades/degravacao.md)
 * [Relatório de Acervo](outras-funcionalidades/relatorio-de-acervo.md)
 * [Busca Semântica de Temas](outras-funcionalidades/busca-semantica-de-temas.md)
+* [Comunidade e Impacto Pessoal](outras-funcionalidades/comunidade-e-impacto-pessoal.md)
+* [Relatório de Uso de IA](outras-funcionalidades/relatorio-de-uso-de-ia.md)
 * [Servidor MCP](outras-funcionalidades/servidor-mcp.md)
+* [Modo Administrativo (SEI)](outras-funcionalidades/modo-administrativo-sei.md)
+* [Sistema de Chamados](outras-funcionalidades/sistema-de-chamados.md)
+
+## Administração
+
+* [Visão Geral da Administração](administracao/administracao.md)
+* [Dashboard de Uso do Tribunal](administracao/dashboard-de-uso.md)
+* [Painéis do Moderador](administracao/paineis-do-moderador.md)
 
 ## Repositório de Prompts
 

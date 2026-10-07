@@ -63,12 +63,16 @@ Para evitar conflitos com a barra de navegação global, as guias e os filtros e
 | **Módulo / Tela**     | **Atalho** | **Função / Ação**                    |
 | --------------------- | ---------- | ------------------------------------ |
 | Chat                  | `e`        | Enviar mensagem para a IA            |
-| Chat                  | `x`        | Anexar documentos/PDFs               |
+| Chat                  | `x`        | Anexar PDFs                          |
 | Revisão de Texto      | `r`        | Revisar texto no editor              |
 | Geração de Pedidos    | `g`        | Gerar análise de pedidos             |
 | Visualizador / Slots  | `d`        | Gerar PDF da página (Print/Download) |
 | Visualizador / Slots  | `u`        | Ouvir / Leitura de áudio             |
 | Formulário de Entrada | `s`        | Prosseguir / Confirmar               |
+| Abrir chamado (modal) | `o`        | Consultar assistente virtual         |
+| Alerta de link MCP    | `v`        | Renovar link do servidor MCP         |
+
+Além dos `accessKey`, as tabelas da Apoia (prompts, peças, biblioteca, relatórios) possuem campo de filtragem interna acionável pela tecla `F`, indicado pelo rótulo "Filtrar..." exibido junto ao campo.
 
 ### Feedback Sonoro Assistivo
 

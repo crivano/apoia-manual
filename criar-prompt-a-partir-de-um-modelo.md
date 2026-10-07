@@ -2,19 +2,21 @@
 
 Um modelo é uma variação da criação de prompts. Essencialmente, o modelo funciona como um prompt oculto. O usuário não visualiza o prompt em si, mas fornece um modelo do resultado que deseja que a inteligência artificial gere.
 
-Para magistrados, por exemplo, que possuem **modelos padrão de sentenças, decisões, etc.**, o processo envolve copiar e colar o modelo existente no campo apropriado do sistema. O modelo contém partes que são designadas para serem substituídas pela inteligência artificial. Por exemplo, seções como "resumo da petição inicial" ou "resumo da contestação" seriam preenchidas automaticamente pela Apoia diretamente sobre o modelo que o magistrado já utiliza normalmente.
+No botão "**Criar Novo**" da página de Prompts há três caminhos:
+
+* **Prompt**: prompt comum (texto de instrução livre).
+* **Prompt a partir de um modelo pré-existente**: você cola um documento modelo seu (ex.: sentença padrão do gabinete) e clica em "**Executar**" — a própria IA converte o texto nas marcações da Apoia (`{}`, `{{}}`, `{{{}}}`) e preenche o campo Modelo do formulário, que você pode revisar antes de salvar.
+* **Prompt a partir de um modelo no padrão da Apoia**: abre o formulário com o campo "**Modelo**" vazio, para você escrever o documento já com as marcações descritas abaixo. O formulário avisa se houver marcação não fechada (ex.: "Marcação não fechada: condicional na linha 12").
+
+Para magistrados, por exemplo, que possuem **modelos padrão de sentenças, decisões, etc.**, o processo envolve copiar e colar o modelo existente no campo apropriado do sistema. O modelo contém partes que são designadas para serem substituídas pela inteligência artificial. Por exemplo, seções como "resumo da petição inicial" ou "resumo da contestação" seriam preenchidas automaticamente pela Apoia diretamente sobre o modelo que o magistrado já utiliza normalmente.
 
 **É fundamental que o modelo já contenha a informação sobre o resultado da decisão**, como se a sentença é de procedência ou improcedência. Isso é crucial porque a inteligência artificial não pode ser encarregada de decidir o mérito da questão.
 
 Se o modelo for bem estruturado e já fornecer um tipo específico de explicação, indicando, por exemplo, que a decisão é improcedente, essa estrutura e resultado podem ser automatizados pela APOIA.
 
-Para criar um modelo, você deve:<br>
+Ao utilizar modelos, a APOIA facilitará a automação do preenchimento de partes repetitivas ou variáveis de documentos padronizados, baseando-se na estrutura e no resultado predefinidos por você.
 
-1. Copiar e colar seu modelo (como uma sentença, decisão, etc.) no campo designado para o modelo.
-2. Certifique-se de que o modelo já inclua a definição do resultado (procedência/improcedência).
-3. Preencher os outros campos disponíveis na tela, da mesma forma que faria ao criar prompts.
-
-Ao utilizar modelos, a APOIA facilitará a automação do preenchimento de partes repetitivas ou variáveis de documentos padronizados, baseando-se na estrutura e no resultado predefinidos por você.
+Ao executar um prompt de modelo, os trechos incluídos pela IA aparecem destacados na visualização "**Destacar Inclusões**", e o botão "**Ver Tabela de Expressões**" lista cada expressão do modelo com o valor gerado e a justificativa da IA.
 
 {% embed url="https://youtu.be/vFc5Stfgb5Y" %}
 

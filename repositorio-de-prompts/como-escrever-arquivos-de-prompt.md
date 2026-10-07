@@ -48,9 +48,9 @@ instance: [segundo-grau]
 matter: [civel]
 scope: [justica-federal]
 author: Nome do Autor
-grupo:
+group:
   slug: minutas-segunda-instancia
-  titulo: Minutas de Segunda Instância
+  title: Minutas de Segunda Instância
 context:
   action: minuta-editar
   instance: segundo-grau
@@ -69,6 +69,7 @@ Identificador único e permanente do prompt. **Nunca altere este valor** após o
 
 * Gere um UUID v4 em qualquer gerador online (ex: `uuidgenerator.net`) ou com o comando `uuidgen` no terminal.
 * Formato: `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`
+* Arquivos sem `uuid` são ignorados pela sincronização (útil para arquivos auxiliares/snippets).
 
 #### `name` _(opcional)_
 
@@ -135,20 +136,24 @@ target: processo
 
 Define qual estratégia de seleção de peças do processo será usada. Relevante apenas quando `target: processo`.
 
-| Valor                                | Descrição                                                                                        |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `mais-relevantes`                    | Peças mais relevantes (estratégia geral)                                                         |
-| `mais-relevantes-primeira-instancia` | Peças mais relevantes de processos de primeiro grau                                              |
-| `mais-relevantes-segunda-instancia`  | Peças mais relevantes de processos de segundo grau                                               |
-| `apelacao-e-triagem`                 | Focada em apelações e triagem                                                                    |
-| `viabilidade-recurso-extraordinario` | Voltada para análise de viabilidade de RE                                                        |
-| `viabilidade-recurso-especial`       | Voltada para análise de viabilidade de REsp                                                      |
-| `peticao-inicial`                    | Foca na petição inicial                                                                          |
-| `peticao-inicial-e-anexos`           | Petição inicial e seus anexos                                                                    |
-| `conhecimento`                       | Fase de conhecimento                                                                             |
-| `tipos-especificos`                  | Seleciona tipos de peça especificados separadamente                                              |
-| `todas`                              | Inclui todas as peças disponíveis                                                                |
-| `selecionadas-pela-ia`               | Nenhuma peça pré-selecionada: a IA escolhe e obtém os textos do processo por meio de ferramentas |
+| Valor                                               | Descrição                                                                                        |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `mais-relevantes`                                   | Peças mais relevantes (estratégia geral)                                                         |
+| `mais-relevantes-primeira-instancia`                | Peças mais relevantes de processos de primeiro grau                                              |
+| `mais-relevantes-segunda-instancia`                 | Peças mais relevantes de processos de segundo grau                                               |
+| `apelacao-e-triagem`                                | Focada em apelações, agravos e triagem                                                           |
+| `conhecimento`                                      | Fase de conhecimento                                                                             |
+| `viabilidade-recurso-extraordinario`                | Voltada para análise de viabilidade de RE                                                        |
+| `viabilidade-recurso-especial`                      | Voltada para análise de viabilidade de REsp                                                      |
+| `agravo-interno-em-viabilidade-recurso-especial`    | Agravo interno em viabilidade de REsp                                                            |
+| `agravo-interno-em-viabilidade-recurso-extraordinario` | Agravo interno em viabilidade de RE                                                           |
+| `peticao-inicial`                                   | Foca na petição inicial                                                                          |
+| `peticao-inicial-e-anexos`                          | Petição inicial e seus anexos                                                                    |
+| `ppp`                                               | Perfis Profissiográficos Previdenciários (PPP)                                                   |
+| `tipos-especificos`                                 | Seleciona tipos de peça especificados separadamente (veja `piece_descr`)                         |
+| `todas`                                             | Inclui todas as peças disponíveis                                                                |
+| `suspensao`                                         | Decisão de suspensão (IRDR/repetitivos/repercussão geral)                                        |
+| `selecionadas-pela-ia`                              | Nenhuma peça pré-selecionada: a IA escolhe e obtém os textos do processo por meio de ferramentas |
 
 ```yaml
 piece_strategy: mais-relevantes-segunda-instancia
@@ -156,24 +161,30 @@ piece_strategy: mais-relevantes-segunda-instancia
 
 #### `profile`_(opcional)_
 
-Define o perfil de modelo a ser usado por este prompt. O front matter aceita apenas os perfis abstratos abaixo, nunca nomes concretos de modelos como `gemini-2.5-pro` ou `gpt-4.1`. Use o perfil `premium` só em último caso, pois normalmente é muito mais caro que os demais. Utilize o perfil `eficiente` quando não há necessidade de raciocínio profundo, mas prezar pela velocidade e baixo custo. O perfil `versatil` representa modelos com boa capacidade de raciocínio e custo razoável.
+Define o perfil de modelo a ser usado por este prompt. O front matter aceita apenas os perfis abstratos abaixo, nunca nomes concretos de modelos como `gemini-2.5-pro` ou `gpt-4.1`. Use o perfil `premium` só em último caso, pois normalmente é muito mais caro que os demais. Utilize o perfil `eficiente` quando não há necessidade de raciocínio profundo, mas se quer velocidade e baixo custo. O perfil `versatil` representa modelos com boa capacidade de raciocínio e custo razoável. O perfil `padrao` é o modelo base configurado pelo tribunal.
 
 Perfis aceitos:
 
-| Valor               | Descrição                                |
-| ------------------- | ---------------------------------------- |
-| `premium`           | Perfil de maior capacidade geral         |
-| `premium-mp3`       | Perfil premium com suporte a MP3         |
-| `premium-pdf`       | Perfil premium com suporte a PDF         |
-| `premium-mp3-pdf`   | Perfil premium com suporte a MP3 e PDF   |
-| `versatil`          | Perfil intermediário de uso geral        |
-| `versatil-mp3`      | Perfil versátil com suporte a MP3        |
-| `versatil-pdf`      | Perfil versátil com suporte a PDF        |
-| `versatil-mp3-pdf`  | Perfil versátil com suporte a MP3 e PDF  |
-| `eficiente`         | Perfil mais econômico/eficiente          |
-| `eficiente-mp3`     | Perfil eficiente com suporte a MP3       |
-| `eficiente-pdf`     | Perfil eficiente com suporte a PDF       |
-| `eficiente-mp3-pdf` | Perfil eficiente com suporte a MP3 e PDF |
+| Valor                 | Descrição                                |
+| --------------------- | ---------------------------------------- |
+| `padrao`              | Perfil padrão do tribunal                |
+| `padrao-mp3`          | Perfil padrão com suporte a MP3          |
+| `padrao-pdf`          | Perfil padrão com suporte a PDF          |
+| `padrao-mp3-pdf`      | Perfil padrão com suporte a MP3 e PDF    |
+| `premium`             | Perfil de maior capacidade geral         |
+| `premium-mp3`         | Perfil premium com suporte a MP3         |
+| `premium-pdf`         | Perfil premium com suporte a PDF         |
+| `premium-mp3-pdf`     | Perfil premium com suporte a MP3 e PDF   |
+| `versatil`            | Perfil intermediário de uso geral        |
+| `versatil-mp3`        | Perfil versátil com suporte a MP3        |
+| `versatil-pdf`        | Perfil versátil com suporte a PDF        |
+| `versatil-mp3-pdf`    | Perfil versátil com suporte a MP3 e PDF  |
+| `eficiente`           | Perfil mais econômico/eficiente          |
+| `eficiente-mp3`       | Perfil eficiente com suporte a MP3       |
+| `eficiente-pdf`       | Perfil eficiente com suporte a PDF       |
+| `eficiente-mp3-pdf`   | Perfil eficiente com suporte a MP3 e PDF |
+
+> Valores legados (`alto`, `medio`, `baixo` e sufixos `audio`) não são mais aceitos.
 
 #### `instance` _(opcional)_
 
@@ -199,7 +210,7 @@ instance: [primeiro-grau, segundo-grau]
 
 #### `scope` _(opcional)_
 
-Lista de ramos da Justiça para os quais o prompt é aplicável.
+Lista de ramos da Justiça para as quais o prompt é aplicável.
 
 | Valor                       | Descrição                |
 | --------------------------- | ------------------------ |
@@ -227,24 +238,22 @@ Lista de matérias jurídicas para as quais o prompt é aplicável.
 | `eleitoral`   | Eleitoral   |
 | `trabalhista` | Trabalhista |
 
-
-
 ```yaml
 matter: [civel]
 ```
 
-#### `grupo` _(opcional)_
+#### `group` _(opcional)_
 
-Agrupa prompts relacionados em uma seção visual na interface. Todos os prompts com o mesmo `slug` aparecem juntos sob o mesmo `titulo`.
+Agrupa prompts relacionados em uma seção visual na interface. Todos os prompts com o mesmo `slug` aparecem juntos sob o mesmo `title`.
 
 ```yaml
-grupo:
+group:
   slug: admissibilidade-de-recursos
-  titulo: Admissibilidade de Recursos
+  title: Admissibilidade de Recursos
 ```
 
 * `slug`: identificador do grupo (letras minúsculas, hífens, sem acentos)
-* `titulo`: texto exibido como cabeçalho do grupo na interface
+* `title`: texto exibido como cabeçalho do grupo na interface
 
 #### `context` _(opcional)_
 
@@ -280,7 +289,7 @@ context:
 
 #### `plugins` _(opcional)_
 
-Lista de plugins ativados para este prompt. Os plugins adicionam funcionalidades extras à execução.
+Lista de plugins ativados para este prompt. Os plugins adicionam funcionalidades extras à execução (usados em relatórios em lote).
 
 | Valor                 | Descrição                        |
 | --------------------- | -------------------------------- |
@@ -299,7 +308,7 @@ plugins:
 
 #### `batch_report` _(opcional)_
 
-Indica que este prompt pode ser utilizado em relatórios de lote (batch). Quando `true`, o prompt aparece como opção no processamento em lote de múltiplos processos.
+Indica que este prompt pode ser utilizado em relatórios de lote (Relatório de Acervo). Quando `true`, o prompt aparece como opção no processamento em lote de múltiplos processos.
 
 ```yaml
 batch_report: true
@@ -307,7 +316,7 @@ batch_report: true
 
 #### `summary` _(opcional)_
 
-Controla se o prompt gera um resumo exibido na interface. Aceita `sim` ou `nao` .
+Controla se o prompt gera um resumo exibido na interface (por exemplo, o resumo de cada peça usado pelos prompts seguintes do workflow). Aceita `sim` ou `nao`.
 
 ```yaml
 summary: sim
@@ -327,7 +336,14 @@ editor_label: Minuta de Voto
 
 #### `piece_descr` _(opcional)_
 
-Lista de tipos de peça processual associados a este prompt. Usado quando `piece_strategy: tipos-especificos` para indicar exatamente quais peças devem ser selecionadas. Os valores são as chaves do enum de tipos de peça, podendo ser escritas na forma canônica ou com hífens (slug).
+Lista de tipos de peça processual associados a este prompt. Tem papel duplo — define a seleção padrão e filtra as peças que o prompt recebe —, porém **só tem efeito quando `piece_strategy: tipos-especificos`** (o formulário só expõe o campo nessa estratégia). Os valores são as chaves do enum de tipos de peça, podendo ser escritas na forma canônica ou com hífens (slug).
+
+A semântica é por **presença**:
+
+* **Ausente** = sem filtro: o prompt recebe todas as peças selecionadas pela estratégia.
+* **Presente, mesmo com lista vazia** = só entram peças dos tipos listados. A lista vazia (`[]`) significa que o prompt **não recebe peças** — útil para passos de workflow que usam apenas os resultados de prompts anteriores (ex.: uma busca de jurisprudência sobre os pedidos já extraídos).
+
+Essa regra vale para o prompt raiz **e para os steps de workflow**. O casamento é feito sobre o tipo efetivo da peça, respeitando [reclassificações](../banco-de-prompts/reclassificacao-de-pecas.md). A sincronização preserva listas vazias declaradas e descarta valores inválidos.
 
 Exemplos de valores aceitos: `peticao-inicial`, `contestacao`, `sentenca`, `apelacao`, `recurso-especial`, etc.
 
@@ -338,9 +354,15 @@ piece_descr:
   - sentenca
 ```
 
+```yaml
+# prompt que não recebe peças, apenas resultados anteriores
+piece_strategy: tipos-especificos
+piece_descr: []
+```
+
 #### `predecessors` _(opcional)_
 
-Lista de prompts que devem ser executados **antes** deste. O sistema usa essa informação para sugerir a ordem de execução em workflows.
+Lista de prompts que devem ser executados **antes** deste. O sistema usa essa informação para montar o encadeamento do workflow (veja [Workflows de Prompts](../banco-de-prompts/workflows-de-prompts.md)).
 
 Cada item pode referenciar outro prompt por `path` (slug do arquivo, sem extensão) ou por `uuid`:
 
@@ -444,11 +466,11 @@ Define o esquema JSON da resposta esperada do modelo, quando o prompt deve retor
 
 ### Seção `# FORMAT` _(opcional)_
 
-Template [Nunjucks](https://mozilla.github.io/nunjucks/) que transforma o JSON retornado pelo modelo em texto formatado para exibição ao usuário. É necessário sempre que o prompt usa `# JSON SCHEMA`, pois o JSON bruto não é exibido diretamente — ele precisa ser renderizado em Markdown, tabela ou qualquer outra estrutura legível.
+Template [Nunjucks](https://mozilla.github.io/nunjucks/) que transforma o JSON retornado pelo modelo em texto formatado para exibição ao usuário. É necessário sempre que o prompt usa `# JSON SCHEMA` ou `## FIELDS`, pois o JSON bruto não é exibido diretamente — ele precisa ser renderizado em Markdown, tabela ou qualquer outra estrutura legível.
 
 **Fluxo de execução:**
 
-1. O modelo retorna um JSON (validado pelo `# JSON SCHEMA`)
+1. O modelo retorna um JSON (validado pelo schema)
 2. O sistema interpreta o `# FORMAT` como um template Nunjucks, passando os campos do JSON como variáveis de contexto
 3. O resultado renderizado é exibido ao usuário
 
@@ -484,6 +506,7 @@ Além dos filtros padrão do Nunjucks, estão disponíveis:
 |--------|-----------|
 | `sortByDate(campo, ordem)` | Ordena um array por um campo de data no formato `DD/MM/YYYY`. `ordem` pode ser `'asc'` (padrão) ou `'desc'` |
 | `blockquoteLines` | Escapa o texto e formata cada linha com `>` (blockquote Markdown) |
+| `limpaHtml` | Limpa HTML desnecessário e embute HTML vivo sem escape (útil para campos JSON e resultados de ferramentas) |
 
 ### Funções de data disponíveis
 
@@ -494,6 +517,18 @@ As seguintes funções ficam disponíveis no contexto do template:
 | `date('DD/MM/YYYY')` | Converte uma string de data |
 | `dateAddDays(data, n)` | Adiciona `n` dias a uma data |
 | `dateAddMonths(data, n)` | Adiciona `n` meses a uma data |
+
+### Marcadores de referência no `# FORMAT`
+
+Trechos do FORMAT podem ser marcados como **referenciáveis** por prompts sucessores do workflow, usando pares de comentários HTML no namespace `apoia:`:
+
+```
+<!--apoia:ementa-->...conteúdo...<!--/apoia:ementa-->
+```
+
+* Os ids são únicos por prompt (letras, números, `.`, `_`, `-`), podem ser aninhados e os comentários são invisíveis no navegador.
+* Um prompt sucessor pode copiar o trecho por referência (veja campos `Rf_` e o comando `copiar` abaixo) ou citá-lo com `step:<slug>#<id>`.
+* Mecanismo **opt-in**: sem marcadores, nada é referenciável. Marcador não fechado é ignorado.
 
 ### Exemplos
 
@@ -535,7 +570,7 @@ As seguintes funções ficam disponíveis no contexto do template:
 {% if PPP | length %}
 | Início | Fim | Empresa | Profissão |
 |--------|-----|---------|-----------|
-{% for ppp in PPP | sortByDate('Dt_Inicio') %}| {= ppp.Dt_Inicio =} | {= ppp.Dt_Fim =} | {= ppp.Tx_Empresa =} | {= ppp.Tx_Profissao =} |
+{% for p in PPP | sortByDate('Dt_Inicio') %}| {= p.Dt_Inicio =} | {= p.Dt_Fim =} | {= p.Tx_Empresa =} | {= p.Tx_Profissao =} |
 {% endfor %}{% endif %}
 ````
 
@@ -555,6 +590,8 @@ O resultado é que o autor do prompt escreve apenas uma vez — as descrições 
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `## FIELDS`          | Após o modelo retornar o JSON, a interface exibe os dados em um formulário **editável** — o usuário pode corrigir os valores antes de prosseguir |
 | `## FIELDS READONLY` | Os dados extraídos são exibidos mas **não editáveis** pelo usuário                                                                               |
+
+Todo schema ganha automaticamente um campo técnico `errorMessage`: se o modelo o preencher (por exemplo, para reportar que não encontrou os dados), o restante do JSON é descartado e o erro é tratado pelo canal normal da aplicação.
 
 #### Estrutura dos headings
 
@@ -577,9 +614,21 @@ O tipo primitivo de cada campo H6 é inferido pelo **prefixo do nome**:
 | `Nr_`    | number        | número                                       |
 | `Lo_`    | boolean       | `true` / `false`                             |
 | `Ev_`    | string        | número de evento processual                  |
+| `Rf_`    | referência    | veja "Campos de referência" abaixo           |
 | (outros) | string        | inferido por palavras como "texto", "resumo" |
 
 O texto em itálico após o traço no nome do heading (`### PPP[] - Perfis Profissiográficos`) vira o rótulo de exibição; o texto antes do traço vira o nome do campo no JSON.
+
+#### Modificadores de campo
+
+No nome do heading de campos primitivos (H6) e de arrays primitivos, podem ser usados modificadores entre parênteses, combináveis:
+
+| Modificador | Efeito |
+| ----------- | ------ |
+| `(opcional)` | O campo pode ficar nulo (continua listado como obrigatório no schema, mas aceita vazio) |
+| `(opções: A, B, C)` | Restringe os valores aceitos (enum). Disponível apenas para campos primitivos e arrays primitivos |
+
+Arrays declarados com `[]` aceitam lista vazia por padrão.
 
 #### Exemplo — campo simples e array
 
@@ -680,6 +729,18 @@ Arrays podem conter sub-arrays usando H4 e H5:
 
 > O `## FIELDS` é usado dentro da seção `# PROMPT`. O sistema injeta automaticamente o boilerplate de instruções gerais (tipos de dados, formatos de data, regras de preenchimento) antes do título, de modo que o autor não precisa repeti-las.
 
+#### Campos de referência (`Rf_`)
+
+Quando o valor de um campo deve ser **copiado integralmente** de um resultado anterior (de ferramenta ou de prompt predecessor) em vez de redigitado pela IA, use o prefixo `Rf_`. O modelo emite apenas uma **referência** e a Apoia materializa o valor exato — uma cópia literal por construção, sem risco de alucinação.
+
+* Fontes de referência: `<toolCallId>#<caminho>`; `<nomeDaFerramenta>#<n>#<caminho>` (n-ésima execução); `<nomeDaFerramenta>#<caminho>` (última execução da ferramenta — forma recomendada); `step:<slug>#<id>` (resultado de prompt anterior do fluxo, onde `<id>` é o marcador `<!--apoia:id-->` do FORMAT).
+* O `<caminho>` é um JSON Pointer (RFC 6901); em arrays com propriedade `id`, prefira `id:<valor>` ao índice.
+* Regras: apenas cópia exata (sínteses vão em campos `Tx_`/`Tg_`); referência inválida é erro (registrado no painel de erros com a resposta crua); não combinável com `(opções)`; no formulário editável, o usuário edita o valor mantendo a referência como procedência; no FORMAT, o valor é acessado diretamente.
+
+#### Comando de cópia integral (`copiar`)
+
+Em prompts de saída **textual** (sem FIELDS) cuja prosa precisa inserir trecho literal de um resultado anterior, o modelo pode emitir o comentário `<!--apoia:copiar:<id>-->` (forma curta — usa o último resultado que tiver o marcador) ou `<!--apoia:copiar:step:<slug>#<id>-->` (forma qualificada). A Apoia substitui o comando pelo conteúdo exato do trecho referenciado, reproduzindo os marcadores originais — o resultado permanece re-referenciável por prompts sucessores. Referência inválida é erro fatal (a resposta é substituída por `ERRO: ...`). A instrução para o modelo é autoral: inclua no PROMPT/SYSTEM PROMPT o parágrafo canônico de instrução documentado na documentação interna do repositório.
+
 ### Exemplos Completos
 
 #### Prompt simples de análise de processo
@@ -709,7 +770,7 @@ Leia com atenção os textos a seguir e resuma as informações mais importantes
 {{textos}}
 ```
 
-#### Prompt de segúnda instância com workflow completo
+#### Prompt de segunda instância com workflow completo
 
 ```markdown
 ---
@@ -747,9 +808,9 @@ name: Minuta de Decisão de Viabilidade de Recurso Especial
 sort: 3
 share: beta-teste
 piece_strategy: viabilidade-recurso-especial
-grupo:
+group:
   slug: admissibilidade-de-recursos
-  titulo: Admissibilidade de Recursos
+  title: Admissibilidade de Recursos
 predecessors:
   - path: pedidos-viabilidade-recurso
   - path: pesquisa-de-temas

@@ -10,6 +10,20 @@ A anonimização pode ser ativada ou desativada diretamente pelo usuário, por m
 Não é realizada anonimização em arquivos enviados como anexos no Chat.
 {% endhint %}
 
+## Ferramenta de Anonimização de Texto
+
+Além da opção global do menu, a página inicial da Apoia disponibiliza a ferramenta **"Anonimização"**, para tratamento pontual de textos. Ela funciona de forma independente do checkbox do menu e **não utiliza IA**: o processamento é feito por padrões de texto, com controle total do usuário sobre o que será anonimizado.
+
+Como utilizar:
+
+1. Acesse a ferramenta pelo cartão "Anonimização" na página inicial.
+2. Cole o texto no editor (também é possível carregar um PDF).
+3. Marque ou desmarque, nas caixas de seleção, os tipos de dado que devem ser anonimizados.
+4. Clique em "**Anonimizar**".
+5. O resultado é exibido com a contagem de substituições realizadas e pode ser editado diretamente no editor antes de copiado.
+
+Os tipos de dados disponíveis para seleção são (entre parênteses, o estado padrão): Números (ativo), CPF (ativo), Identidade/RG (ativo), Número de Processo (inativo), Número de Benefício (inativo), Endereços (ativo), Telefone fixo (ativo), Telefone móvel (ativo), E-mails (ativo), OAB (ativo), URLs (ativo), CRM (ativo) e Nomes próprios (ativo).
+
 ## Informações anonimizadas
 
 Quando a anonimização está ativa, o sistema aplica transformações automáticas no conteúdo textual das peças processuais e dos metadados, cobrindo os seguintes tipos de dados:

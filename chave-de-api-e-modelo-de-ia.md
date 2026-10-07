@@ -1,8 +1,32 @@
 # Chave de API e Modelo de IA
 
-Um ponto crucial da Apoia é a **escolha do provedor de inteligência artificial, do modelo e o custeio do uso**. Existe uma página na Apoia acessível pelo menu "Modelo de IA". Nesta página, há campos para inserir a chave da API dos principais provedores. Após obter a chave da API, ela deve ser cadastrada neste campo. Por exemplo, ao colar uma chave de API da OpenAI, será possível escolher um dos modelos disponíveis da OpenAI. Para usar modelos de outros provedores como Cloud ou Gemini, é necessário informar as chaves correspondentes (Antropic, Google, etc.). É possível preencher mais de uma chave, o que disponibiliza mais modelos para seleção. Após preencher a chave e escolher o modelo, basta clicar em salvar. O nome do modelo selecionado ficará visível entre parênteses no menu, indicando qual modelo será usado para processar todos os prompts pela Apoia.
+Um ponto crucial da Apoia é a **escolha do provedor de inteligência artificial, do modelo e o custeio do uso**. Existe uma página na Apoia acessível pelo menu "Modelo de IA". Nesta página, há campos para inserir a chave da API dos principais provedores.
 
-Caso o usuário não tenha informado uma chave de API e um modelo de IA, a Apoia preparará um texto contendo o prompt e o conteúdo das peças em questão e o copiará para a área de transferência, permitindo que o usuário cole o texto em sua ferramenta de IA preferida.
+Após obter a chave da API, ela deve ser cadastrada neste campo. Por exemplo, ao colar uma chave de API da OpenAI, será possível escolher um dos modelos disponíveis da OpenAI. Para usar modelos de outros provedores, como Claude ou Gemini, é necessário informar as chaves correspondentes (Anthropic, Google, etc.). É possível preencher mais de uma chave, o que disponibiliza mais modelos para seleção.
+
+Atualmente, os provedores com suporte público são:
+
+* OpenAI (ChatGPT)
+* Anthropic (Claude)
+* Google (Gemini)
+* Microsoft Azure
+* Amazon Web Services (AWS)
+
+Há ainda provedores em fase de desenvolvimento, visíveis apenas para usuários beta-testers: Groq, DeepSeek, OpenRouter e On-premises (modelos hospedados na infraestrutura do próprio tribunal).
+
+Alguns provedores exigem dados adicionais além da chave: o Azure pede o **nome do recurso**; a AWS pede **key-id** e **região**; OpenRouter e On-premises pedem a **lista de modelos** disponíveis.
+
+{% hint style="info" %}
+Se o seu tribunal já registrou chaves de API junto à Apoia (veja [Integração com Tribunais](integracao-com-tribunais.md)), a página informará algo como "Este tribunal opera por padrão com o modelo X" e você poderá usar os modelos disponibilizados pelo tribunal, sem chave própria. Informando uma chave pessoal, você passa a poder escolher também entre os modelos do provedor.
+{% endhint %}
+
+Após preencher a chave e escolher o modelo, basta clicar em **Salvar**. O nome do modelo selecionado ficará visível entre parênteses no menu, indicando qual modelo será usado para processar todos os prompts pela Apoia.
+
+A opção **"Usar meu modelo em todas as situações"** faz com que o modelo escolhido seja usado sempre, mesmo quando um prompt ou o tribunal indicar um perfil de modelo diferente (Padrão, Eficiente, Versátil ou Premium).
+
+As chaves informadas são **armazenadas de forma criptografada** na sua conta da Apoia.
+
+Caso o usuário não tenha informado uma chave de API e um modelo de IA, e o tribunal também não tenha disponibilizado modelos, a Apoia preparará um texto contendo o prompt e o conteúdo das peças em questão e o copiará para a área de transferência, permitindo que o usuário cole o texto em sua ferramenta de IA preferida.
 
 O uso de APIs próprias ajuda na **proteção de informações sigilosas**.
 

@@ -21,11 +21,18 @@ Para conectar o Apoia a um cliente externo via MCP, é necessário gerar uma URL
 
 1. Acesse o menu "MCP" na barra superior da Apoia.
 2. Clique no botão "Gerar URL" para criar o link de conexão que contém o seu token de acesso individual.
-3. Copie o link exibido.
+3. Copie o link exibido com o botão "Copiar".
 
-> ⚠️ Validade do Token: A URL gerada possui validade de até 8 horas a contar do momento do login. Expirado este prazo, será necessário realizar um novo login na Apoia e gerar um novo link de conexão.
->
-> 🔒 Segurança: O link gerado funciona como uma credencial pessoal e nunca deve ser compartilhado com terceiros.
+> 🔒 Segurança: A URL gerada funciona como uma credencial pessoal (senha) e nunca deve ser compartilhada com terceiros.
+
+### Validade, Renovação e Revogação
+
+O token embutido na URL tem a validade da sua sessão de login (até 8 horas) e **não é renovado automaticamente**. Após um novo login na Apoia, se você possuir um link MCP cadastrado, a página inicial exibirá um aviso oferecendo duas opções:
+
+* **Renovar**: estende a validade do token **mantendo a mesma URL** — não é preciso reconfigurar nada no cliente de IA.
+* **Cancelar link**: revoga o link imediatamente (a URL deixa de autenticar); exige confirmação em dois cliques.
+
+Sem ação do usuário, o link deixa de funcionar sozinho quando o token expira. **Gerar uma nova URL em /mcp revoga a anterior** (o token antigo é invalidado na hora). Links expirados há mais de 30 dias não podem mais ser renovados — nesse caso, gere uma nova URL.
 
 ### Configuração em Clientes de IA
 
@@ -34,7 +41,7 @@ Para conectar o Apoia a um cliente externo via MCP, é necessário gerar uma URL
 1. No Claude, acesse as configurações da sua conta e vá para a seção Customize > Connectors.
 2. Clique em Add custom connector.
 3. Defina um nome para a conexão (ex.: `Apoia`) e cole a URL gerada na Apoia.
-4. Clique em Connect e autorize o uso das ferramentas disponíveis (`processMetadata` e `piecesText`).
+4. Clique em Connect e autorize o uso das ferramentas disponíveis.
 
 #### OpenAI (ChatGPT)
 
@@ -44,7 +51,19 @@ Para conectar o Apoia a um cliente externo via MCP, é necessário gerar uma URL
 
 ### Ferramentas Disponíveis via MCP
 
-Após a conexão, o cliente de IA externo passará a ter acesso automático às ferramentas do ecossistema Apoia, sendo as principais:
+Após a conexão, o cliente de IA externo passará a ter acesso automático às ferramentas do ecossistema Apoia:
 
-* `processMetadata`: Consulta e retorna os metadados e informações gerais do processo a partir do número informado (com anonimização/proteção de dados sensíveis).
-* `piecesText`: Realiza a busca e a leitura do teor das peças e documentos processuais.
+| Ferramenta | Descrição |
+| --- | --- |
+| `processMetadata` | Obtém os metadados e informações gerais do processo a partir do número informado (com anonimização/proteção de dados sensíveis). |
+| `piecesText` | Realiza a busca e a leitura do teor das peças e documentos processuais. |
+| `libraryDocument` | Obtém o conteúdo de documentos da sua Biblioteca. |
+| `pangea` | Busca teses, súmulas, OJs, temas de repercussão geral e repetitivos no Pangea (STF/STJ por padrão). |
+| `semanticSearch` | Busca semântica/híbrida de temas de repercussão geral do STF e recursos especiais repetitivos do STJ. |
+| `leadingCaseSearch` | Busca temas de repercussão geral e repetitivos pelo número do processo paradigma. |
+| `precedent` | Busca jurisprudência do tribunal (quando configurada pelo tribunal). |
+| `precedentFullText` | Obtém o inteiro teor de documentos de jurisprudência. |
+| `currentDate`, `dateDiff`, `addDate` | Consulta a data de hoje e realiza operações com datas. |
+| `calculator` | Avalia cálculos matemáticos. |
+
+As ferramentas de jurisprudência (`precedent` e `precedentFullText`) retornam um aviso caso o seu tribunal ainda não tenha configurado a integração de busca.

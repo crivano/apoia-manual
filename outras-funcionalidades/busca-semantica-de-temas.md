@@ -14,26 +14,28 @@ Diferente da busca de texto comum, onde o sistema procura exatamente pelas palav
 
 1. Acesse o menu "Busca de Temas".
 2. No campo de pesquisa, descreva a situação jurídica ou o fato que deseja consultar. Não é necessário utilizar termos técnicos precisos; você pode descrever o caso em linguagem natural.
-3. Clique em Pesquisar. O sistema retornará os temas com maior similaridade semântica em relação à sua consulta.
-4. O resultado exibirá o número do tema, o tribunal de origem e a tese firmada, destacando em azul escuro a questão central.
+3. Clique em Pesquisar (ou pressione Enter). O sistema retornará os temas com maior similaridade semântica em relação à sua consulta.
+4. O resultado exibirá o número do tema, o tribunal de origem e a tese firmada, destacando a questão central. Clicando no marcador da fonte (junto a cada resultado) é possível expandir os dados completos do tema em JSON.
 
 #### Opções Avançadas e Filtros
 
-Para usuários que desejam maior precisão, a ferramenta oferece configurações avançadas:
+Para usuários que desejam maior precisão, o botão "**Filtros Avançados**" oferece configurações:
 
 * Modo de Busca:
   * Híbrida (Padrão): Combina a busca vetorial (sentido) com a busca de texto (palavras exatas) para um resultado equilibrado.
   * Vetorial: Foca exclusivamente no significado e contexto através de modelos de IA.
-  * Texto: Funciona como uma busca tradicional, focando na literalidade dos termos.
-* Similaridade Mínima: Permite definir o quão próximo o resultado deve estar da consulta original para ser exibido.
-* Peso do Balanceamento: Permite dar mais importância à busca vetorial ou à busca de texto no modo híbrido.
-* Fontes de Dados: Possibilita selecionar especificamente de quais tribunais ou bases de dados os temas devem ser recuperados.
+  * Texto Completo: Funciona como uma busca tradicional, focando na literalidade dos termos.
+* Balanceamento (só no modo híbrido): define o peso entre a busca vetorial e a busca de texto (padrão 70/30).
+* Similaridade Mínima: define o quão próximo o resultado deve estar da consulta original para ser exibido (padrão 30%).
+* Fontes de Dados: possibilita selecionar especificamente de quais tribunais ou bases de dados os temas devem ser recuperados (botões-pílula com os nomes das fontes disponíveis).
+
+Nos resultados do modo híbrido, cada item exibe os marcadores "**V: X%**" (similaridade vetorial) e "**T: Y%**" (similaridade de texto), além da similaridade combinada, colorida conforme a força do casamento (verde para casamentos mais fortes). Os resultados são paginados.
 
 #### Vantagens
 
 * Agilidade: Encontra precedentes mesmo quando a terminologia técnica exata é desconhecida.
 * Precisão Contextual: Reduz o "ruído" de resultados que contêm as palavras pesquisadas, mas tratam de assuntos diferentes.
-* Integração: Facilita a fundamentação de peças processuais com temas repetitivos e repercussão geral.
+* Integração: Facilita a fundamentação de peças processuais com temas repetitivos e repercussão geral. A mesma base pode ser consultada pela IA do Chat, por meio das ferramentas de busca de temas e do Pangea.
 
 ***
 

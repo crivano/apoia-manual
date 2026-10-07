@@ -4,11 +4,11 @@
 
 #### 1.1. O que é?
 
-A Apoia é uma aplicação web que utiliza Inteligência Artificial Generativa para auxiliar magistrados e servidores no tratamento de processos judiciais. Seus principais módulos são: Banco de Prompts, Síntese Processual, Revisão de Texto e Geração de Ementas.
+A Apoia é uma aplicação web que utiliza Inteligência Artificial Generativa para auxiliar magistrados e servidores no tratamento de processos judiciais e administrativos. Seus principais módulos são: Banco de Prompts, Biblioteca, Chat, Revisão de Texto, Linguagem Simples, Geração de Ementas, Degravação, Busca Semântica de Temas, Relatório de Acervo e Servidor MCP.
 
 #### 1.2. Quem pode acessar?
 
-Apenas magistrados e servidores da Justiça Federal podem acessar a Apoia. O login via Gov.BR não é permitido.
+Magistrados e servidores do Poder Judiciário podem acessar a Apoia, mediante registro prévio no sistema "Corporativo" do CNJ. O login via Gov.BR não é permitido. A disponibilidade para os tribunais de cada segmento depende de integração prévia (veja [Integração com Tribunais](integracao-com-tribunais.md)).
 
 #### 1.3. Por quem foi criada?
 
@@ -40,13 +40,13 @@ Prompt é uma instrução enviada à IA com o objetivo de gerar uma resposta. Na
 
 #### 3.3. Como gerar um relatório de análise de processo?
 
-Utilize o módulo **Síntese Processual**, informe o número do processo e a Apoia executará automaticamente prompts internos para gerar resumos e análises.
+Informe o número do processo na página de **Prompts** e execute o prompt **"Síntese"** (ou outro prompt de análise). A Apoia selecionará automaticamente as peças mais relevantes e executará os prompts internos para gerar resumos e análises. Também é possível usar o **Chat**, informando o número do processo na primeira pergunta.
 
 ### 4. Solução de Problemas
 
 #### O sistema apresenta erro \[código de erro]. Como resolver?
 
-Anote o código e o contexto do erro e entre em contato com o suporte técnico em: [https://suporteti.cnj.jus.br](https://suporteti.cnj.jus.br/)
+Registre um chamado diretamente na Apoia pela opção **"Ajuda / Abrir chamado"** no menu do usuário: o sistema anexa automaticamente o contexto do erro e um assistente virtual busca a solução imediatamente (veja [Sistema de Chamados](outras-funcionalidades/sistema-de-chamados.md)). Se preferir, também é possível entrar em contato com o suporte técnico do CNJ em: [https://suporteti.cnj.jus.br](https://suporteti.cnj.jus.br/)
 
 #### Erro acessando processo
 
