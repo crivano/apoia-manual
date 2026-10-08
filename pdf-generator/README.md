@@ -25,9 +25,11 @@ npm run pdf -- --out dist/meu-arquivo.pdf       # default: dist/manual-apoia.pdf
 Todos os caminhos são resolvidos a partir dos próprios módulos — pode rodar
 de qualquer diretório.
 
-Imagens da CDN do GitHub, logos oficiais da capa (apoia.pdpj.jus.br) e
-thumbnails do YouTube são baixadas uma única vez para `assets-cache/`
-(re-runs ficam offline). Embeds de vídeo viram um card com thumbnail clicável
+Imagens da CDN do GitHub e thumbnails do YouTube são baixadas uma única vez
+para `assets-cache/` (re-runs ficam offline). As logos oficiais da capa são
+versionadas em `pdf-generator/assets/` (o site da PDPJ bloqueia requisições
+de IPs de CI com 403, então não são baixadas). Embeds de vídeo viram um card
+com thumbnail clicável
 + QR code do link (útil no papel). Rodapé com numeração de páginas; links
 internos do manual e o sumário são clicáveis no PDF.
 

@@ -5,9 +5,10 @@
 // data URI, deixando o PDF self-contained.
 import fs from 'node:fs'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { extractHeadingSlugs } from './anchors.mjs'
 import { splitFences, splitInlineCode, transformEmbeds, youtubeId } from './gitbook.mjs'
-import { qrDataUri, resolveAssetKey, urlDataUri, youtubeThumbDataUri } from './assets.mjs'
+import { fileDataUri, qrDataUri, resolveAssetKey, youtubeThumbDataUri } from './assets.mjs'
 import { renderPage } from './render.mjs'
 import { flatten, parseSummary } from './summary.mjs'
 
@@ -15,12 +16,14 @@ const escapeHtml = (value) => value.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<'
 
 const GITBOOK_URL = 'https://trf2.gitbook.io/apoia'
 
-// Logos oficiais da capa (mesma largura, ~1/3 da página). Baixadas uma única
-// vez para assets-cache/; testes injetam data URIs via opts.coverLogos.
-const COVER_LOGO_URLS = [
-    'https://apoia.pdpj.jus.br/apoia-logo.jpeg',
-    'https://apoia.pdpj.jus.br/apoia-logo-horiz-cor-fundo-claro.png',
-]
+// Logos oficiais da capa (mesma largura, ~1/3 da página), versionadas em
+// assets/ — o site da PDPJ responde 403 a IPs de CI, então não são baixadas.
+// Testes injetam data URIs via opts.coverLogos.
+const HERE = path.dirname(fileURLToPath(import.meta.url))
+const COVER_LOGO_FILES = [
+    'apoia-logo.jpeg',
+    'apoia-logo-horiz-cor-fundo-claro.png',
+].map(name => path.join(HERE, '..', 'assets', name))
 
 export function loadManual(manualDir) {
     const summaryMd = fs.readFileSync(path.join(manualDir, 'SUMMARY.md'), 'utf-8')
@@ -63,7 +66,7 @@ export async function buildHtml(manualDir, opts = {}) {
         process.stdout.write(`renderizado ${i + 1}/${pages.length}: ${page.file}\n`)
     }
 
-    const coverLogos = opts.coverLogos ?? await Promise.all(COVER_LOGO_URLS.map(urlDataUri))
+    const coverLogos = opts.coverLogos ?? COVER_LOGO_FILES.map(fileDataUri)
     return shell({ tree, chapters, generatedAt: new Date(), coverLogos })
 }
 

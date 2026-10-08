@@ -52,17 +52,10 @@ export async function resolveAssetKey(key, manualDir) {
     return toDataUri(target, mime)
 }
 
-// Download genérico com cache (capa): basename da URL como chave, mime pela
-// extensão. Usado para as logos oficiais da capa.
-export async function urlDataUri(url) {
-    const name = `dl-${path.basename(new URL(url).pathname)}`
-    const target = cachePath(name)
-    if (!fs.existsSync(target)) {
-        const bytes = await download(url, target)
-        console.log(`baixado: ${name} (${bytes} bytes)`)
-    }
-    const mime = name.toLowerCase().endsWith('.png') ? 'image/png' : 'image/jpeg'
-    return toDataUri(target, mime)
+// Arquivo local -> data URI (logos da capa, versionadas em assets/).
+export function fileDataUri(file) {
+    const mime = file.toLowerCase().endsWith('.png') ? 'image/png' : 'image/jpeg'
+    return toDataUri(file, mime)
 }
 
 // Thumbnails do YouTube em 16:9 sem letterbox: hqdefault.jpg é 4:3 com barras
