@@ -1,0 +1,19 @@
+{
+    "name": "apoia-manual-pdf",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Gerador de PDF do Manual da Apoia (roda dentro do repo do manual)",
+    "type": "module",
+    "engines": {
+        "node": ">=18"
+    },
+    "scripts": {
+        "pdf": "node src/generate-pdf.mjs",
+        "test": "node --test"
+    },
+    "dependencies": {
+        "puppeteer": "^24.0.0",
+        "qrcode": "^1.5.4",
+        "showdown": "^2.1.0"
+    }
+}

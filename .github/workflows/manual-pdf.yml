@@ -1,0 +1,55 @@
+name: PDF do manual
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: manual-pdf
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: pdf-generator/package-lock.json
+
+      - name: Cache do Chromium do Puppeteer
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: puppeteer-${{ runner.os }}-${{ hashFiles('pdf-generator/package-lock.json') }}
+
+      - name: Instalar dependências
+        run: npm ci
+        working-directory: pdf-generator
+
+      - name: Testes (inclui integridade do corpus real)
+        run: npm test
+        working-directory: pdf-generator
+
+      - name: Gerar PDF
+        run: npm run pdf
+        working-directory: pdf-generator
+
+      - name: Publicar PDF na Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: manual-pdf
+          name: Manual da Apoia (PDF)
+          body: |
+            PDF completo do manual, gerado automaticamente a partir do branch main.
+
+            Commit: ${{ github.sha }}
+          files: pdf-generator/dist/manual-apoia.pdf
