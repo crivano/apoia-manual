@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Termos de Uso - 30/09/2026
 
 ## 1. Apresentação e Aceitação
