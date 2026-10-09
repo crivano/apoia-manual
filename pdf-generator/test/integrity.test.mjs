@@ -7,7 +7,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { extractHeadingSlugs } from '../src/anchors.mjs'
-import { matchRelativeLinks, splitFences, splitInlineCode } from '../src/gitbook.mjs'
+import { loadManual } from '../src/build-html.mjs'
+import { matchRelativeLinks, splitFences, splitFrontmatter, splitInlineCode } from '../src/gitbook.mjs'
 import { renderPage } from '../src/render.mjs'
 import { flatten, parseSummary } from '../src/summary.mjs'
 
@@ -33,6 +34,18 @@ test('todas as páginas do SUMMARY existem', () => {
     assert.deepEqual(missing.map(p => p.file), [])
 })
 
+test('páginas com hidden: true ficam fora do build e visíveis entram', () => {
+    const built = new Set(loadManual(MANUAL_DIR).pages.map(p => p.file))
+    const problems = []
+    for (const file of listMarkdownFiles(MANUAL_DIR)) {
+        const rel = path.relative(MANUAL_DIR, file).split(path.sep).join('/')
+        const { hidden } = splitFrontmatter(fs.readFileSync(file, 'utf-8'))
+        if (hidden && built.has(rel)) problems.push(`${rel}: hidden: true mas entrou no build`)
+        if (!hidden && summaryFiles.has(rel) && !built.has(rel)) problems.push(`${rel}: sem hidden mas ficou fora do build`)
+    }
+    assert.deepEqual(problems, [])
+})
+
 test('links internos resolvem para páginas do SUMMARY e âncoras existem', () => {
     const problems = []
     for (const page of pages) {
@@ -48,7 +61,7 @@ test('links internos resolvem para páginas do SUMMARY e âncoras existem', () =
                 continue
             }
             if (link.anchor) {
-                const anchors = extractHeadingSlugs(readManual(resolved))
+                const anchors = extractHeadingSlugs(splitFrontmatter(readManual(resolved)).md)
                 if (!anchors.includes(link.anchor.slice(1))) {
                     problems.push(`${page.file}: âncora ${link.anchor} não existe em ${resolved}`)
                 }
@@ -79,7 +92,7 @@ test('imagens referenciadas têm origem no repo do manual', () => {
 test('render de todas as páginas sem resíduo (fora de code/pre)', () => {
     const problems = []
     for (const page of pages) {
-        const { html } = renderPage(readManual(page.file), page.file, {})
+        const { html } = renderPage(splitFrontmatter(readManual(page.file)).md, page.file, {})
         const outsideCode = html.replace(/<pre>[\s\S]*?<\/pre>/g, '').replace(/<code>[\s\S]*?<\/code>/g, '')
         for (const residue of ['@@APOIA-HINT', '{% hint', '{% embed', '{% endhint']) {
             if (outsideCode.includes(residue)) problems.push(`${page.file}: resíduo "${residue}"`)

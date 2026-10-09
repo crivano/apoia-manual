@@ -7,7 +7,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { extractHeadingSlugs } from './anchors.mjs'
-import { splitFences, splitInlineCode, transformEmbeds, youtubeId } from './gitbook.mjs'
+import { splitFences, splitFrontmatter, splitInlineCode, transformEmbeds, youtubeId } from './gitbook.mjs'
 import { fileDataUri, qrDataUri, resolveAssetKey, youtubeThumbDataUri } from './assets.mjs'
 import { renderPage } from './render.mjs'
 import { flatten, parseSummary } from './summary.mjs'
@@ -33,7 +33,15 @@ export function loadManual(manualDir) {
     if (missing.length) {
         throw new Error(`Páginas do SUMMARY ausentes em ${manualDir}: ${missing.map(p => p.file).join(', ')}`)
     }
-    return { tree, pages }
+    // Páginas com front-matter hidden: true saem do PDF e do índice; seções
+    // que ficarem vazias também saem (não sobra heading órfão no sumário).
+    for (const section of tree) {
+        section.pages = section.pages.filter(
+            page => !splitFrontmatter(fs.readFileSync(path.join(manualDir, page.file), 'utf-8')).hidden,
+        )
+    }
+    const visibleTree = tree.filter(section => section.pages.length > 0)
+    return { tree: visibleTree, pages: flatten(visibleTree) }
 }
 
 export async function buildHtml(manualDir, opts = {}) {
@@ -44,7 +52,7 @@ export async function buildHtml(manualDir, opts = {}) {
     // markdown — mesma regra validada nos testes de integridade).
     const headingSlugsByFile = new Map(pages.map(page => [
         page.file,
-        extractHeadingSlugs(fs.readFileSync(path.join(manualDir, page.file), 'utf-8')),
+        extractHeadingSlugs(splitFrontmatter(fs.readFileSync(path.join(manualDir, page.file), 'utf-8')).md),
     ]))
     const resolveTarget = (file, anchor) => {
         const index = pageIndex.get(file)
@@ -58,7 +66,7 @@ export async function buildHtml(manualDir, opts = {}) {
     const chapters = []
     for (let i = 0; i < pages.length; i++) {
         const page = pages[i]
-        const md = fs.readFileSync(path.join(manualDir, page.file), 'utf-8')
+        const { md } = splitFrontmatter(fs.readFileSync(path.join(manualDir, page.file), 'utf-8'))
         const { html, embeds } = renderPage(md, page.file, { headingPrefix: `p${i}-`, resolveTarget })
         let chapterHtml = await resolveEmbeds(html, embeds)
         chapterHtml = await resolveImages(chapterHtml, manualDir)

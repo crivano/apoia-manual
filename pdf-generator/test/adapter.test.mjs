@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { gitbookSlug, extractHeadingSlugs } from '../src/anchors.mjs'
-import { matchRelativeLinks, rewriteImages, rewriteRelativeLinks, splitFences, youtubeId } from '../src/gitbook.mjs'
+import { matchRelativeLinks, rewriteImages, rewriteRelativeLinks, splitFences, splitFrontmatter, youtubeId } from '../src/gitbook.mjs'
 import { renderPage } from '../src/render.mjs'
 import { flatten, parseSummary } from '../src/summary.mjs'
 
@@ -56,6 +56,22 @@ test('splitFences separa ``` e ~~~', () => {
     const segments = splitFences('texto\n\n```\ncódigo\n```\n\nfim')
     assert.deepEqual(segments.map(s => s.fenced), [false, true, false])
     assert.ok(segments[1].text.includes('código'))
+})
+
+test('splitFrontmatter: hidden: true oculta, demais campos são desprezados', () => {
+    // sem front-matter: nada a fazer
+    assert.deepEqual(splitFrontmatter('# Título\n\ntexto'), { hidden: false, md: '# Título\n\ntexto' })
+    // '---' sem fechamento não é front-matter
+    assert.deepEqual(splitFrontmatter('---\nsem fechamento'), { hidden: false, md: '---\nsem fechamento' })
+    // outros campos (mesmo multi-linha): bloco removido, página visível
+    assert.deepEqual(
+        splitFrontmatter('---\ndescription: >-\n  Texto em\n  várias linhas\n---\n# Corpo\n'),
+        { hidden: false, md: '# Corpo\n' },
+    )
+    // hidden: true (CRLF como nos arquivos do repo)
+    assert.deepEqual(splitFrontmatter('---\r\nhidden: true\r\n---\r\n# Corpo\r\n'), { hidden: true, md: '# Corpo\r\n' })
+    // hidden com outro valor não oculta
+    assert.deepEqual(splitFrontmatter('---\nhidden: false\n---\n# Corpo\n'), { hidden: false, md: '# Corpo\n' })
 })
 
 test('rewriteImages gera chaves asset: para CDN e .gitbook', () => {

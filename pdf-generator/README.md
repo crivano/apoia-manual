@@ -6,6 +6,10 @@ O conteúdo do manual **nunca é escrito**: toda a adaptação GitBook → HTML 
 em memória e só o PDF final é gravado. Esta pasta fica fora do `SUMMARY.md`,
 então o site publicado no GitBook não é afetado.
 
+Páginas com front-matter `hidden: true` ficam fora do PDF e do índice; o
+restante do front-matter (ex.: `description:`) é desprezado — o bloco é
+removido antes da renderização.
+
 ## Uso local
 
 ```bash

@@ -5,6 +5,19 @@
 // relativos são resolvidos por callback para âncoras internas do PDF.
 import path from 'node:path'
 
+const FRONTMATTER_RE = /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/
+
+// Separa o front-matter (bloco YAML aberto por '---' na primeira linha e
+// fechado por um '---' em linha própria) do corpo do markdown. Só interessa
+// hidden: true — a página não entra no PDF nem no índice; qualquer outro
+// campo ou valor é desprezado: o bloco inteiro sai do markdown renderizado.
+export function splitFrontmatter(md) {
+    const match = md.match(FRONTMATTER_RE)
+    if (!match) return { hidden: false, md }
+    const hidden = /^hidden:[ \t]*true[ \t]*\r?$/m.test(match[1])
+    return { hidden, md: md.slice(match[0].length) }
+}
+
 export function splitFences(md) {
     const segments = []
     const lines = md.split(/\r?\n/)

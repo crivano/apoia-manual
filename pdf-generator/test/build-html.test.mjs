@@ -14,14 +14,21 @@ fs.writeFileSync(path.join(fixtureDir, 'SUMMARY.md'), [
     '',
     '* [Início](README.md)',
     '* [FAQ](faq.md)',
+    '* [Glossário](glossario.md)',
     '',
     '## Seção',
     '',
     '* [Chat](chat.md)',
+    '',
+    '## Rascunhos',
+    '',
+    '* [Rascunho](rascunho.md)',
 ].join('\n'))
 fs.writeFileSync(path.join(fixtureDir, 'README.md'), '# Manual da Apoia\n\nBem-vindo. Veja o [FAQ](faq.md#perguntas).\n')
 fs.writeFileSync(path.join(fixtureDir, 'faq.md'), '# FAQ\n\n## Perguntas\n\nResposta.\n\n[voltar](README.md)\n')
+fs.writeFileSync(path.join(fixtureDir, 'glossario.md'), '---\ndescription: Termos do manual\n---\n# Glossário\n\nTermo: definição.\n')
 fs.writeFileSync(path.join(fixtureDir, 'chat.md'), '# Chat\n\n{% hint style="info" %}\nDica.\n{% endhint %}\n\n[faq](../faq.md)\n')
+fs.writeFileSync(path.join(fixtureDir, 'rascunho.md'), '---\nhidden: true\n---\n# Rascunho\n\nConteúdo que não deve aparecer.\n')
 
 test('buildHtml monta capa, sumário e âncoras internas', async () => {
     // coverLogos injetados para não depender de rede no teste
@@ -38,10 +45,11 @@ test('buildHtml monta capa, sumário e âncoras internas', async () => {
     assert.ok(html.indexOf('cover-main') < html.indexOf('<div class="cover-rule"></div>'))
     assert.ok(html.indexOf('<div class="cover-rule"></div>') < html.indexOf('<h1>Manual da Apoia</h1>'))
     assert.ok(html.includes('<a href="https://trf2.gitbook.io/apoia">trf2.gitbook.io/apoia</a>'))
-    // sumário: 3 entradas apontando para p0/p1/p2
+    // sumário: entradas apontando para p0/p1/p2/p3
     assert.ok(html.includes('<a href="#p0">Início</a>'))
     assert.ok(html.includes('<a href="#p1">FAQ</a>'))
-    assert.ok(html.includes('<a href="#p2">Chat</a>'))
+    assert.ok(html.includes('<a href="#p2">Glossário</a>'))
+    assert.ok(html.includes('<a href="#p3">Chat</a>'))
     assert.ok(html.includes('<h2>Seção</h2>'))
     // capítulos com ids e títulos
     assert.ok(html.includes('<section class="chapter" id="p1">'))
@@ -52,6 +60,14 @@ test('buildHtml monta capa, sumário e âncoras internas', async () => {
     assert.ok(html.includes('<h2 id="p1-perguntas">Perguntas</h2>'))
     // hint renderizado
     assert.ok(html.includes('<div class="hint hint-info">'))
+    // front-matter hidden: true: sem capítulo, sem entrada no sumário e sem a
+    // seção que ficou vazia; outro front-matter (description): página mantida
+    // com o bloco YAML descartado na renderização
+    assert.ok(!html.includes('Rascunho'))
+    assert.ok(!html.includes('Rascunhos'))
+    assert.ok(html.includes('<section class="chapter" id="p2">'))
+    assert.ok(html.includes('<h1 class="chapter-title">Glossário</h1>'))
+    assert.ok(!html.includes('description:'))
 })
 
 test('buildHtml falha se página do SUMMARY não existe', async () => {
