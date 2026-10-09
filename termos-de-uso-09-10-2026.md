@@ -1,6 +1,6 @@
 # Termos de Uso - 30/09/2026
 
-## 1. Apresentação e Aceitação
+## 1. Apresentação e Aceitação 
 
 1.1. O sistema Apoia ("Sistema") é uma plataforma digital de titularidade do Tribunal Regional Federal da 2ª Região (TRF2), disponibilizada no âmbito da Plataforma Digital do Poder Judiciário (PDPJ) pelo Conselho Nacional de Justiça (CNJ) para adesão e utilização por todos os tribunais interessados. Seu objetivo é otimizar e gerenciar rotinas inerentes à prestação jurisdicional e administrativa.
 
