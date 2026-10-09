@@ -56,11 +56,12 @@
 * [Dashboard de Uso do Tribunal](administracao/dashboard-de-uso.md)
 * [Painéis do Moderador](administracao/paineis-do-moderador.md)
 
-## Repositório de Prompts
-
-* [Como Escrever Arquivos de Prompt](repositorio-de-prompts/como-escrever-arquivos-de-prompt.md)
-
 ## Termos de Uso
 
 * [Termos de Uso - 09/10/2026](termos-de-uso-09-10-2026.md)
 * [Termos de Uso - 30/09/2026](termos-de-uso-30-09-2026.md)
+
+## Repositório de Prompts
+
+* [Como Escrever Arquivos de Prompt](repositorio-de-prompts/como-escrever-arquivos-de-prompt.md)
+
