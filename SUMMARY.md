@@ -62,4 +62,4 @@
 
 ## Termos de Uso
 
-* [Termos de Uso - 30/09/2026](termos-de-uso-30-09-2026.md)
+* [Termos de Uso - 09/10/2026](termos-de-uso-09-10-2026.md)
